@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         $user = User::where('email', $request['email'])->firstOrFail();
 
-        prin_r($user);
+        print_r($user);
         exit;
         $token = $user->createToken('auth_token')->plainTextToken;
 
