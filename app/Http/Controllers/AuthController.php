@@ -13,6 +13,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        echo "COMES";exit;
         if (!Auth::attempt($request->only('email', 'password'))) {
             return response()->json([
                 'message' => 'Invalid login details'
@@ -27,7 +28,7 @@ class AuthController extends Controller
                 'access_token' => $token,
                 'token_type' => 'Bearer',
                 'user'=> $user,
-                'googlemapapi'=> env('GOOGLEMAPAPI')
+                //'googlemapapi'=> env('GOOGLEMAPAPI')
         ]);
     }
 

@@ -28,7 +28,7 @@
                 <x-guest-layout>
                         <x-jet-authentication-card>
                             <x-slot name="logo">
-                                <img src="{{ url('logo.png') }}" />
+                                <img src="{{ url('logo.jpeg') }}" />
                             </x-slot>
 
                             <x-jet-validation-errors class="mb-4" />
