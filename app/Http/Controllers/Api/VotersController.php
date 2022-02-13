@@ -64,9 +64,16 @@ class VotersController extends Controller
     }
 
     public function searchByEpicno(Request $request){
-          $epicno = $request->epicno;
-          $voter = Voter::where('epic_no','=', $epicno)->first();
-          if(!$voter){
+          $value = $request->value;
+          $type = $request->type;
+
+          if($type == 'epicno'){
+              $voter = Voter::where('epic_no','=', $value)->get();
+          }
+          if($type == 'voter_name'){
+            $voter = Voter::where('voter_name','LIKE','%'.$value.'%')->get();
+        }
+          if($voter->isEmpty()){
                 return response()->json([
                     'status' => 0,
                     'message' => 'No data found'
