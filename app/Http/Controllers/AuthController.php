@@ -21,16 +21,20 @@ class AuthController extends Controller
             }
 
         $user = User::where('email', $request['email'])->firstOrFail();
-
+        if(!$user){
+                return response()->json([
+                    'status' => 0,
+                    'message' => 'User not found'
+                ]);
+        }
        
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        // print_r($user);exit;
         return response()->json([
+                'status' => 1,
                 'access_token' => $token,
                 'token_type' => 'Bearer',
                 'user'=> $user,
-                //'googlemapapi'=> env('GOOGLEMAPAPI')
         ]);
     }
 

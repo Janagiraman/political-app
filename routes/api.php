@@ -30,9 +30,9 @@ Route::middleware('auth:sanctum')->group( function () {
     //Route::post('blogs', '[BlogController::class, 'store']');
 
     // Route::post('apply', 'App\Http\Controllers\Api\LeaveController@apply')->name('apply');
-    Route::post('leaves', 'App\Http\Controllers\Api\LeaveController@leaves')->name('leaves');
-    Route::post('apply-leave', 'App\Http\Controllers\Api\LeaveController@apply')->name('apply-leave');
-    Route::post('leave-history', 'App\Http\Controllers\Api\LeaveController@leaveHistory')->name('leave-history');
+    // Route::post('leaves', 'App\Http\Controllers\Api\LeaveController@leaves')->name('leaves');
+    // Route::post('apply-leave', 'App\Http\Controllers\Api\LeaveController@apply')->name('apply-leave');
+    // Route::post('leave-history', 'App\Http\Controllers\Api\LeaveController@leaveHistory')->name('leave-history');
   
     
     Route::post('customers', 'App\Http\Controllers\Api\JobController@customers')->name('customers');
