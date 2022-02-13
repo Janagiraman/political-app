@@ -34,6 +34,7 @@ Route::middleware('auth:sanctum')->group( function () {
     // Route::post('apply-leave', 'App\Http\Controllers\Api\LeaveController@apply')->name('apply-leave');
     // Route::post('leave-history', 'App\Http\Controllers\Api\LeaveController@leaveHistory')->name('leave-history');
   
+    Route::post('search-epicno','App\Http\Controllers\Api\VotersController@searchByEpicno')->name('search-ecpicno');
     
     Route::post('customers', 'App\Http\Controllers\Api\JobController@customers')->name('customers');
     Route::get('tasks', 'App\Http\Controllers\Api\JobController@tasks')->name('tasks');
