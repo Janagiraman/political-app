@@ -49,21 +49,9 @@ Route::get('services', Services::class)->name('services');
 
 Route::get('voters', Voters::class)->name('voters');
 
-Route::get('tasks', Tasks::class)->name('tasks');
-
 Route::get('cities', Cities::class)->name('cities');
 
-Route::get('jobs', Jobs::class)->name('jobs');
-
-Route::get('leaves', Leaves::class)->name('leaves');
-
 Route::get('reports', Reports::class)->name('reports');
-
-Route::get('holidays', Holidays::class)->name('holidays');
-
-// Route::get('import-voters', [HomeController::class, 'index']);
-
-// Route::resource('home', HomeController::class);
 
 Route::get('import-voters', [HomeController::class, 'index'])->name('import-voters');
 

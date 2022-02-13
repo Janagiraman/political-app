@@ -22,9 +22,12 @@
                             <thead>
                                 <tr class="bg-gray-100">
                                     <th class="px-4 py-2 w-20">No.</th>
+                                    <th class="px-4 py-2">Booth No</th>
+                                    <th class="px-4 py-2">Booth Name</th>
+                                    <th class="px-4 py-2">Area Name</th>
+                                    <th class="px-4 py-2">Epic No</th>
                                     <th class="px-4 py-2">Name</th>
-                                    <th class="px-4 py-2">Description</th>                                   
-                                    <th class="px-4 py-2">Action</th>
+                                  
                                 </tr>   
                             </thead>
                             <tbody>
@@ -32,13 +35,12 @@
                                 @foreach($voters as $voter)
                                 <tr>
                                     <td class="border px-4 py-2">{{ $no++ }}</td>
+                                    <td class="border px-4 py-2">{{ $voter->booth_no }}</td>
+                                    <td class="border px-4 py-2">{{ $voter->booth_name }}</td>
+                                    <td class="border px-4 py-2">{{ $voter->area_name }}</td>
+                                    <td class="border px-4 py-2">{{ $voter->epic_no }}</td>
                                     <td class="border px-4 py-2">{{ $voter->voter_name }}</td>
-                                    <td class="border px-4 py-2">
-                                    <x-jet-button wire:click="edit( {{ $voter->id}})" class="bg-orange-500 hover:bg-orange-700 m-1 w-20">
-                                        Edit
-                                    </x-jet-button>
                                     
-                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
