@@ -28,8 +28,11 @@ class Voters extends Component
 
     public function render()
     {
-        $this->voters = Voter::all();
-        return view('livewire.voters.list');
+        //$this->voters = Voter::all();
+        return view('livewire.voters.list', [
+            'voters' => Voter::paginate(50),
+        ]);
+        //return view('livewire.voters.list');
     }
 
     public function create(){
