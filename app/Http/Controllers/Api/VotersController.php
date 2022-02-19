@@ -86,4 +86,25 @@ class VotersController extends Controller
         ]);
 
     }
+
+    public function updateVoterInfo(Request $request){
+        $voter_id =  $request->voter_id;
+        $type = $request->type;
+        $value = $request->value;
+
+        $voter = Voter::find($voter_id);
+        $voter->$type = $value;
+        if($voter->save()){
+            return response()->json([
+                'status' => 1,
+                'message' => 'Succesfully Saved',
+                'data' => $voter
+            ]);
+        }
+
+        return response()->json([
+            'status' => 0,
+            'message' => 'Data not updated'
+        ]);
+    }
 }

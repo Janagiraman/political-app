@@ -33,6 +33,8 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('search-epicno','App\Http\Controllers\Api\VotersController@searchByEpicno')->name('search-ecpicno');
     Route::get('services', 'App\Http\Controllers\Api\ServiceController@index')->name('services');
     Route::post('add-voter-service', 'App\Http\Controllers\Api\ServiceController@addVoterService')->name('add-voter-service');
+    Route::post('voter-service-list', 'App\Http\Controllers\Api\ServiceController@voterServiceList')->name('voter-service-list');
+    Route::post('update-voter-info', 'App\Http\Controllers\Api\VotersController@updateVoterInfo')->name('update-voter-info');
     
 
     // Route::post('customers', 'App\Http\Controllers\Api\JobController@customers')->name('customers');

@@ -36,6 +36,7 @@ class CreateVotersTable extends Migration
             $table->string('profession')->nullable();
             $table->string('ration_card_no')->nullable();
             $table->string('ayushman_card_no')->nullable();
+            $table->string('estrain_card')->nullable();
             $table->timestamps();
         });
     }

@@ -99,14 +99,36 @@ class ServiceController extends Controller
            $voterService->latitude = $latitude;
            $voterService->longitude = $longitude;
            $voterService->user_id = $user_id;
+           $fileName = 'service_'.time().'.'.$request->image->extension();  
+   
+           $request->file->move(public_path('service_images'), $fileName);
            if($voterService->save()){
             return [
                 'status' => 1, 
                 'message' => 'Service added Successfully.'
             ];
         }
+    }
+
+    public function voterServiceList(Request $request){
+
+        $voterServiceList = [];
+        if($request->user_id !=''){
+            $voterServiceList =  VoterService::where('user_id','=',$request->user_id)->get();
+            if($voterServiceList->isEmpty()){
+                return [
+                    'status' => 0, 
+                    'message' => 'Service data not found'
+                ];
+            }
+        }
+
+        return [
+            'status' => 1, 
+            'data' => $voterServiceList
+        ];
 
 
-
+       
     }
 }
