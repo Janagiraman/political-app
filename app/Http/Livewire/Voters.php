@@ -24,15 +24,16 @@ class Voters extends Component
     public $importing = false;
     public $importFilePath;
     public $importFinished = false;
+    public $searchTerm;
 
 
     public function render()
     {
-        //$this->voters = Voter::all();
+        $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.voters.list', [
-            'voters' => Voter::paginate(50),
+            'voters' => Voter::where('epic_no','like', $searchTerm)->paginate(50),
         ]);
-        //return view('livewire.voters.list');
+        
     }
 
     public function create(){
