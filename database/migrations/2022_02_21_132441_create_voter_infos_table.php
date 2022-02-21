@@ -21,9 +21,9 @@ class CreateVoterInfosTable extends Migration
             $table->string('value');
             $table->string('image')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('comment');
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }
