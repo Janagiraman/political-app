@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Voter;
+use App\Models\VoterInfos;
 
 class VotersController extends Controller
 {
@@ -88,23 +89,38 @@ class VotersController extends Controller
     }
 
     public function updateVoterInfo(Request $request){
-        $voter_id =  $request->voter_id;
-        $type = $request->type;
-        $value = $request->value;
+      
 
-        $voter = Voter::find($voter_id);
-        $voter->$type = $value;
-        if($voter->save()){
+        $voterInfo = new VoterInfos();
+        $voterInfo->voter_id = $request->voter_id;
+        $voterInfo->user_id = $request->user_id;
+        $voterInfo->doc_type = $request->doc_type;
+        $voterInfo->value = $request->value;
+        $voterInfo->epic_no = $request->epic_no;
+        $voterInfo->latitude = $request->latitude;
+        $voterInfo->longitude = $request->longitude;
+        $voterInfo->comment = $request->comment;
+
+        if($voterInfo->save()){
+
+             $voterId = $voterInfo->id;
+             $voterImage = VoterInfos::find($voterId);
+             if ($file = $request->file('image')) {
+                   $name = $voterId.'_'.$voterInfo->epic_no.'_'.time().'.'.$request->image->extension(); 
+                   $request->image->move(public_path('images/voters'), $name);
+             }  
+             $voterImage->image = $name;
+             $voterImage->save();
+
             return response()->json([
                 'status' => 1,
                 'message' => 'Succesfully Saved',
-                'data' => $voter
             ]);
         }
 
         return response()->json([
             'status' => 0,
-            'message' => 'Data not updated'
+            'message' => 'Something went wrong'
         ]);
     }
 }

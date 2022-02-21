@@ -92,6 +92,7 @@ class ServiceController extends Controller
            $user_id = $request->user_id;
 
            $voterService->epic_no = $epic_no;
+           $voterService->voter_id = $request->voter_id;
            $voterService->service_type = $service_type;
            $voterService->is_provide_service = $is_provide_service;
            $voterService->image = $image;
@@ -99,10 +100,17 @@ class ServiceController extends Controller
            $voterService->latitude = $latitude;
            $voterService->longitude = $longitude;
            $voterService->user_id = $user_id;
-           $fileName = 'service_'.time().'.'.$request->image->extension();  
-   
-           $request->file->move(public_path('service_images'), $fileName);
+          
            if($voterService->save()){
+                $id = $voterService->id;
+                $serviceImage = VoterService::find($id);
+                if ($file = $request->file('image')) {
+                      $name = 'service_'.time().'.'.$request->image->extension();
+                      $request->image->move(public_path('service_images'), $name);
+                      $serviceImage->image = $name;
+                      $serviceImage->save();
+                }  
+
             return [
                 'status' => 1, 
                 'message' => 'Service added Successfully.'

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVoterServicesTable extends Migration
+class CreateVoterInfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateVoterServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('voter_services', function (Blueprint $table) {
+        Schema::create('voter_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('epic_no');
             $table->unsignedBigInteger('voter_id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('service_type');
-            $table->string('is_provide_service')->nullable();
+            $table->string('epic_no');
+            $table->string('doc_type');
+            $table->string('value');
             $table->string('image')->nullable();
-            $table->string('comment')->nullable();
-            $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('comment');
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class CreateVoterServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voter_services');
+        Schema::dropIfExists('voter_infos');
     }
 }
