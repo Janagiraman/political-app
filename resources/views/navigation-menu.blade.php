@@ -22,28 +22,28 @@
             <ul class="flex new-nav-list items-center">
                 <li class="mr-3 mt-2 flex-1">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        <i class="fas fa-tachometer-alt pr-0 md:pr-3"></i></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Dashboard</span>
+                        <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Dashboard</span>
                     </x-jet-nav-link>
 
                 </li>
                 <li class="mr-3 mt-2 flex-1">
                     <x-jet-nav-link href="{{ route('roles') }}" :active="request()->routeIs('roles')">
-                        <i class="fas fa-user-tag pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Roles</span>
+                        <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Roles</span>
                     </x-jet-nav-link>
                 </li>
                 <li class="mr-3 mt-2 flex-1">
                     <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
-                        <i class="fas fa-users pr-0 md:pr-3"></i></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Users</span>
+                       <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Users</span>
                     </x-jet-nav-link>
                 </li>
                 <li class="mr-3 mt-2 flex-1">
                     <x-jet-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')">
-                        <i class="fas fa-address-card pr-0 md:pr-3"></i></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Services</span>
+                       <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Services</span>
                     </x-jet-nav-link>
                 </li>
                 <li class="mr-3 mt-2 flex-1">
                     <x-jet-nav-link href="{{ route('voters') }}" :active="request()->routeIs('voters')">
-                        <i class="fas fa-address-card pr-0 md:pr-3"></i></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Voters</span>
+                       <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Voters</span>
                     </x-jet-nav-link>
                 </li>
 
