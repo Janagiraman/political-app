@@ -88,6 +88,24 @@ class VotersController extends Controller
 
     }
 
+    public function voterInfo(Request $request){
+        $value = $request->epic_no;
+        if($value != ''){
+            $voterInfo = VoterInfos::where('epic_no','=', $value)->get();
+        }
+        if($voterInfo->isEmpty()){
+              return response()->json([
+                  'status' => 0,
+                  'message' => 'No data found'
+              ]);
+        }
+        return response()->json([
+          'status' => 1,
+          'data' => $voterInfo
+        ]);
+
+  }
+
     public function updateVoterInfo(Request $request){
       
 
