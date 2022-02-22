@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a class="text-white" href="{{ route('dashboard') }}">
+                    <a class="text-white text-lg" href="{{ route('dashboard') }}">
                         Anjanadri
                     </a>
                 </div>
