@@ -92,7 +92,7 @@ class VotersController extends Controller
     public function voterInfo(Request $request){
         $value = $request->epic_no;
         if($value != ''){
-            $voterInfo = VoterInfos::with('user')->where('epic_no','=', $value)->get();
+            $voterInfo = VoterInfos::with('user:id,name')->where('epic_no','=', $value)->get();
         }
 
         if($voterInfo->isEmpty()){
@@ -112,7 +112,7 @@ class VotersController extends Controller
   public function voterServices(Request $request){
     $value = $request->epic_no;
     if($value != ''){
-        $voterService = VoterService::with('user')->where('epic_no','=', $value)->get();
+        $voterService = VoterService::with('user:id,name')->where('epic_no','=', $value)->get();
     }
     if($voterService->isEmpty()){
           return response()->json([
