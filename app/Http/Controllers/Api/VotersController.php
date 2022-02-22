@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Voter;
 use App\Models\VoterInfos;
+use App\Models\VoterService;
 
 class VotersController extends Controller
 {
@@ -105,6 +106,24 @@ class VotersController extends Controller
         ]);
 
   }
+
+  public function voterServices(Request $request){
+    $value = $request->epic_no;
+    if($value != ''){
+        $voterService = VoterService::where('epic_no','=', $value)->get();
+    }
+    if($voterService->isEmpty()){
+          return response()->json([
+              'status' => 0,
+              'message' => 'No data found'
+          ]);
+    }
+    return response()->json([
+      'status' => 1,
+      'data' => $voterService
+    ]);
+
+}
 
     public function updateVoterInfo(Request $request){
       
