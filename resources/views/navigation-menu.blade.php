@@ -26,7 +26,7 @@
                     </x-jet-nav-link>
 
                 </li>
-                <li class="mr-3 flex-1">
+                <li class="mr-3 mt-2 flex-1">
                     <x-jet-nav-link href="{{ route('roles') }}" :active="request()->routeIs('roles')">
                         <i class="fas fa-user-tag pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Roles</span>
                     </x-jet-nav-link>
