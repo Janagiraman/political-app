@@ -48,7 +48,7 @@
         <div class=" grid grid-cols-12 min-h-screen bg-gray-100">
             <div class="col-span-12 row-span-1 bg-gray-100 fixed">  @livewire('navigation-menu')
 
-                <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left ">
+                <ul class="flex new-nav-list">
                     <li class="mr-3 mt-2 flex-1">
                         <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                             <i class="fas fa-tachometer-alt pr-0 md:pr-3"></i></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Dashboard</span>

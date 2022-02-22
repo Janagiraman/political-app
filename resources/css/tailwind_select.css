@@ -126,7 +126,7 @@
     white-space: nowrap !important;
 }
 
-/* 
+/*
 
 	Default template settings:
 
@@ -353,6 +353,10 @@
     /* Have no idea what this is for */
     @apply cursor-default block;
     padding: 6px;
+}
+
+.new-nav-list{
+    background: red;
 }
 
 @tailwind utilities;
