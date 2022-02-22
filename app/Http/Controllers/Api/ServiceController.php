@@ -130,13 +130,10 @@ class ServiceController extends Controller
                 ];
             }
         }
-
         return [
             'status' => 1, 
-            'data' => $voterServiceList
+            'data' => $voterServiceList,
+            
         ];
-
-
-       
     }
 }

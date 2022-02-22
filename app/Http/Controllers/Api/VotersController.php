@@ -92,8 +92,9 @@ class VotersController extends Controller
     public function voterInfo(Request $request){
         $value = $request->epic_no;
         if($value != ''){
-            $voterInfo = VoterInfos::where('epic_no','=', $value)->get();
+            $voterInfo = VoterInfos::with('user')->where('epic_no','=', $value)->get();
         }
+
         if($voterInfo->isEmpty()){
               return response()->json([
                   'status' => 0,
@@ -102,7 +103,8 @@ class VotersController extends Controller
         }
         return response()->json([
           'status' => 1,
-          'data' => $voterInfo
+          'data' => $voterInfo,
+          'image_path' => 'http://anjanadridb.com/images/voters/'
         ]);
 
   }
@@ -110,7 +112,7 @@ class VotersController extends Controller
   public function voterServices(Request $request){
     $value = $request->epic_no;
     if($value != ''){
-        $voterService = VoterService::where('epic_no','=', $value)->get();
+        $voterService = VoterService::with('user')->where('epic_no','=', $value)->get();
     }
     if($voterService->isEmpty()){
           return response()->json([
@@ -120,7 +122,8 @@ class VotersController extends Controller
     }
     return response()->json([
       'status' => 1,
-      'data' => $voterService
+      'data' => $voterService,
+      'image_path' => 'http://anjanadridb.com/service_images/'
     ]);
 
 }
@@ -145,9 +148,10 @@ class VotersController extends Controller
              if ($file = $request->file('image')) {
                    $name = $voterId.'_'.$voterInfo->epic_no.'_'.time().'.'.$request->image->extension(); 
                    $request->image->move(public_path('images/voters'), $name);
+                   $voterImage->image = $name;
+                   $voterImage->save();
              }  
-             $voterImage->image = $name;
-             $voterImage->save();
+            
 
             return response()->json([
                 'status' => 1,

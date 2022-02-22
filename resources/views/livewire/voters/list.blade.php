@@ -12,6 +12,8 @@
             @include('livewire.voters.create')
         @elseif($importMode)
             @include('livewire.voters.create')
+        @elseif($voterDetailMode)
+            @include('livewire.voters.detail')
         @else
 
             <input type="text"  class="form-control" placeholder="Search Epic No" wire:model="searchTerm" />
@@ -29,6 +31,8 @@
                                     <th class="px-4 py-2">Area Name</th>
                                     <th class="px-4 py-2">Epic No</th>
                                     <th class="px-4 py-2">Name</th>
+                                    <th class="px-4 py-2">View</th>
+
                                   
                                 </tr>   
                             </thead>
@@ -40,8 +44,14 @@
                                     <td class="border px-4 py-2">{{ $voter->booth_no }}</td>
                                     <td class="border px-4 py-2">{{ $voter->booth_name }}</td>
                                     <td class="border px-4 py-2">{{ $voter->area_name }}</td>
-                                    <td class="border px-4 py-2">{{ $voter->epic_no }}</td>
+                                    <td class="border px-4 py-2">{{ $voter->epic_no }}</td> 
                                     <td class="border px-4 py-2">{{ $voter->voter_name }}</td>
+                                    <td class="border px-4 py-2">
+                                            <x-jet-secondary-button wire:click="voterDetails({{$voter->id}})" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100 px-4 py-2 my-6">
+                                                View
+                                            </x-jet-button>
+                                    </td>
+
                                     
                                 </tr>
                                 @endforeach

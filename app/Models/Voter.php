@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\VoterInfo;
 
 class Voter extends Model
 {
@@ -21,4 +22,10 @@ class Voter extends Model
         'epic_no',
         'age'        
     ];
+    
+    public function voterInfo()
+    {
+        return $this->belongsTo(VoterInfo::class);
+    }
+
 }

@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\UserRole;
+use App\Models\VoterInfo;
 
 class User extends Authenticatable
 {
@@ -66,6 +67,16 @@ class User extends Authenticatable
     public function role()
     {
         return $this->hasOne(UserRole::class);
+    }
+
+    public function voterInfo()
+    {
+        return $this->hasOne(VoterInfos::class);
+    }
+
+    public function voterService()
+    {
+        return $this->hasOne(VoterService::class);
     }
 
 
