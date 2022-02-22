@@ -5,9 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
-                        
+                    <a class="text-white text-lg" href="{{ route('dashboard') }}">
+                        Anjanadri
                     </a>
                 </div>
 
@@ -19,6 +18,35 @@
                 </div>
             </div>
 
+            <ul class="flex new-nav-list items-center">
+                <li class="mr-3 mt-2 flex-1">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Dashboard</span>
+                    </x-jet-nav-link>
+
+                </li>
+                <li class="mr-3 mt-2 flex-1">
+                    <x-jet-nav-link href="{{ route('roles') }}" :active="request()->routeIs('roles')">
+                        <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Roles</span>
+                    </x-jet-nav-link>
+                </li>
+                <li class="mr-3 mt-2 flex-1">
+                    <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                       <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Users</span>
+                    </x-jet-nav-link>
+                </li>
+                <li class="mr-3 mt-2 flex-1">
+                    <x-jet-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')">
+                       <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Services</span>
+                    </x-jet-nav-link>
+                </li>
+                <li class="mr-3 mt-2 flex-1">
+                    <x-jet-nav-link href="{{ route('voters') }}" :active="request()->routeIs('voters')">
+                       <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Voters</span>
+                    </x-jet-nav-link>
+                </li>
+
+            </ul>
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

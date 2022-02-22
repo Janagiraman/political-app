@@ -126,7 +126,7 @@
     white-space: nowrap !important;
 }
 
-/* 
+/*
 
 	Default template settings:
 
@@ -354,5 +354,7 @@
     @apply cursor-default block;
     padding: 6px;
 }
+
+
 
 @tailwind utilities;
