@@ -17,14 +17,15 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                background: #fff;
             }
         </style>
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-           
+
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-               
+
                 <x-guest-layout>
                         <x-jet-authentication-card>
                             <x-slot name="logo">
@@ -74,7 +75,7 @@
                         </x-jet-authentication-card>
                     </x-guest-layout>
 
-                
+
             </div>
         </div>
     </body>
