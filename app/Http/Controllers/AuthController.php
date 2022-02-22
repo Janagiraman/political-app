@@ -19,7 +19,7 @@ class AuthController extends Controller
                 'status' => 0,
                 'message' => 'Invalid login details'
                 ], 200);
-            }
+        }
 
         $user = User::where('email', $request['email'])->firstOrFail();
         $token = $user->createToken('auth_token')->plainTextToken;

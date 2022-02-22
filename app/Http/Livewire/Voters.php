@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Voter;
+use App\Models\VoterInfos;
+use App\Models\VoterService;
 use App\Voters\ImportVoters;
 
 use Livewire\WithFileUploads;
@@ -25,7 +27,7 @@ class Voters extends Component
     public $importFilePath;
     public $importFinished = false;
     public $searchTerm;
-    public $voterDetails;
+    public $voterDetails, $voterProfile, $voterServices;
 
 
     public function render()
@@ -45,6 +47,7 @@ class Voters extends Component
     public function view(){
         $this->importMode = false;
         $this->updateMode = false;
+        $this->voterDetailMode = false;
         $this->resetInput();
     }
 
@@ -59,6 +62,9 @@ class Voters extends Component
         $this->importMode = false;
         $this->voterDetailMode = true;
         $this->voterDetails = Voter::where('id', $id)->first();
+        $this->voterProfile = VoterInfos::where('voter_id', $id)->get();
+        $this->voterServices = VoterService::where('voter_id', $id)->get();
+        
         
     }
 
