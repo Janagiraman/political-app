@@ -16,7 +16,7 @@ use App\Imports\VotersImport;
 class Voters extends Component
 {
     use WithFileUploads;
-    public $updateMode,$importMode = false;
+    public $updateMode,$importMode, $voterDetailMode = false;
     public $name, $description, $confirmingItemDeletion;
     public $show = true;
     public $batchId;
@@ -25,6 +25,7 @@ class Voters extends Component
     public $importFilePath;
     public $importFinished = false;
     public $searchTerm;
+    public $voterDetails;
 
 
     public function render()
@@ -51,6 +52,13 @@ class Voters extends Component
         
         $this->importMode = true;
         return view('livewire.voters.create');
+        
+    }
+
+    public function voterDetails($id){
+        $this->importMode = false;
+        $this->voterDetailMode = true;
+        $this->voterDetails = Voter::where('id', $id)->first();
         
     }
 
