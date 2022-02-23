@@ -13,19 +13,19 @@
 
         <table class="table-fixed w-full">
                               <tr>
-                                  <th class="px-4 py-2 border">Booth No</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_no }}</td>
+                                  <th class="px-4 py-2 border text-left">Booth No</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_no }}</td>
                                </tr>
                                <tr>
-                                  <th class="px-4 py-2 border">Booth Name</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_name }}</td>
+                                  <th class="px-4 py-2 border text-left">Booth Name</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_name }}</td>
                                </tr>
                                <tr>
-                                  <th class="px-4 py-2 border">Area Name</th><td class=" px-4 py-2 border">{{ $voterDetails->area_name }}</td>
+                                  <th class="px-4 py-2 border text-left">Area Name</th><td class=" px-4 py-2 border">{{ $voterDetails->area_name }}</td>
                                </tr>
                                <tr>
-                                  <th class="px-4 py-2 border">Epic No</th><td class=" px-4 py-2 border">{{ $voterDetails->epic_no }}</td>
+                                  <th class="px-4 py-2 border text-left">Epic No</th><td class=" px-4 py-2 border">{{ $voterDetails->epic_no }}</td>
                                </tr>
                                <tr>
-                                  <th class="px-4 py-2 border">Name</th><td class=" px-4 py-2 border">{{ $voterDetails->voter_name }}</td>
+                                  <th class="px-4 py-2 border text-left">Name</th><td class=" px-4 py-2 border">{{ $voterDetails->voter_name }}</td>
                                </tr>
             </table>
 
@@ -33,12 +33,12 @@
 
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
-                                  <th>Doc Name</th>
-                                  <th>Details</th>
-                                  <th>Image</th>
-                                  <th>Latitude</th>
-                                  <th>longitude</th>
-                                  <th>Updated By</th>
+                                  <th class="px-4 py-2 text-left">Doc Name</th>
+                                  <th class="px-4 py-2 text-left">Details</th>
+                                  <th class="px-4 py-2 text-left">Image</th>
+                                  <th class="px-4 py-2 text-left">Latitude</th>
+                                  <th class="px-4 py-2 text-left">longitude</th>
+                                  <th class="px-4 py-2 text-left">Updated By</th>
                                </tr>
                                @foreach($voterProfile as $key =>  $profile)
                                    <tr>
@@ -55,12 +55,12 @@
             <h2 class="py-2 pt-8">Services Information</h2>
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
-                                  <th>Service Type</th>
-                                  <th>Provided</th>
-                                  <th>Image</th>
-                                  <th>Comment</th>
-                                  <th>Location</th>
-                                  <th>Updated By</th>
+                                  <th class="px-4 py-2 text-left">Service Type</th>
+                                  <th class="px-4 py-2 text-left">Provided</th>
+                                  <th class="px-4 py-2 text-left">Image</th>
+                                  <th class="px-4 py-2 text-left">Comment</th>
+                                  <th class="px-4 py-2 text-left">Location</th>
+                                  <th class="px-4 py-2 text-left">Updated By</th>
                                </tr>
                                @foreach($voterServices as $key =>  $service)
                                    <tr>
@@ -76,4 +76,4 @@
 
             </div>
 
-            
+
