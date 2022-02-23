@@ -9,28 +9,22 @@
              Voter Details
          </x-jet-button>
 
-        s
-
         <div>Voter Information</div>
         <table class="table-fixed w-full">
-                              <tr class="bg-gray-100">
-                                  <th class="px-4 py-2">Booth No</th><td>{{ $voterDetails->booth_no }}</td>
+                              <tr>
+                                  <th class=" bg-gray-100 px-4 py-2">Booth No</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_no }}</td>
                                </tr>
-                               <tr class="bg-gray-100">
-
-                                  <th class="px-4 py-2">Booth Name</th><td>{{ $voterDetails->booth_name }}</td>
+                               <tr>
+                                  <th class="px-4 py-2">Booth Name</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_name }}</td>
                                </tr>
-                               <tr class="bg-gray-100">
-
-                                  <th class="px-4 py-2   ">Area Name</th><td>{{ $voterDetails->area_name }}</td>
+                               <tr>
+                                  <th class="px-4 py-2 bg-gray-100">Area Name</th><td class=" px-4 py-2 border">{{ $voterDetails->area_name }}</td>
                                </tr>
-                               <tr class="bg-gray-100">
-
-                                  <th class="px-4 py-2   ">Epic No</th><td>{{ $voterDetails->epic_no }}</td>
+                               <tr>
+                                  <th class="px-4 py-2 bg-gray-100 ">Epic No</th><td class=" px-4 py-2 border">{{ $voterDetails->epic_no }}</td>
                                </tr>
-                               <tr class="bg-gray-100">
-
-                                  <th class=" px-4 py-2  ">Name</th><td>{{ $voterDetails->voter_name }}</td>
+                               <tr>
+                                  <th class=" px-4 py-2 bg-gray-100">Name</th><td class=" px-4 py-2 border">{{ $voterDetails->voter_name }}</td>
                                </tr>
             </table>
 
