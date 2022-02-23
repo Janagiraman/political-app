@@ -14,24 +14,23 @@
         <div>Voter Information</div>
         <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
-
-                                  <th class="   ">Booth No</th><td>{{ $voterDetails->booth_no }}</td>
+                                  <th class="px-4 py-2">Booth No</th><td>{{ $voterDetails->booth_no }}</td>
                                </tr>
                                <tr class="bg-gray-100">
 
-                                  <th class="   ">Booth Name</th><td>{{ $voterDetails->booth_name }}</td>
+                                  <th class="px-4 py-2">Booth Name</th><td>{{ $voterDetails->booth_name }}</td>
                                </tr>
                                <tr class="bg-gray-100">
 
-                                  <th class="   ">Area Name</th><td>{{ $voterDetails->area_name }}</td>
+                                  <th class="px-4 py-2   ">Area Name</th><td>{{ $voterDetails->area_name }}</td>
                                </tr>
                                <tr class="bg-gray-100">
 
-                                  <th class="   ">Epic No</th><td>{{ $voterDetails->epic_no }}</td>
+                                  <th class="px-4 py-2   ">Epic No</th><td>{{ $voterDetails->epic_no }}</td>
                                </tr>
                                <tr class="bg-gray-100">
 
-                                  <th class="   ">Name</th><td>{{ $voterDetails->voter_name }}</td>
+                                  <th class=" px-4 py-2  ">Name</th><td>{{ $voterDetails->voter_name }}</td>
                                </tr>
             </table>
 
