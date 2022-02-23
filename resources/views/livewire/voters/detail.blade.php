@@ -4,7 +4,7 @@
         </h2>
 </x-slot>
 
-<div class="py-12">
+<div class="">
         <x-jet-secondary-button wire:click="view()" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100     -my-20 ">
              Voter Details
          </x-jet-button>
