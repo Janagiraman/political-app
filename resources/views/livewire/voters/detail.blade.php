@@ -9,7 +9,7 @@
              Voter Details
          </x-jet-button>
 
-        <h4 class="py-2 pt-8">Voter Information</h4>
+        <h2 class="py-2 pt-8">Voter Information</h2>
 
         <table class="table-fixed w-full">
                               <tr>
@@ -29,7 +29,7 @@
                                </tr>
             </table>
 
-            <h4 class="py-2 pt-8">Profile Information</h4>
+            <h2 class="py-2 pt-8">Profile Information</h2>
 
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
@@ -52,7 +52,7 @@
                                @endforeach
             </table>
 
-            <h4 class="py-2 pt-8">Services Information</h4>
+            <h2 class="py-2 pt-8">Services Information</h2>
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
                                   <th>Service Type</th>
