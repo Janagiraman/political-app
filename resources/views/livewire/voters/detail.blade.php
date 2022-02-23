@@ -4,12 +4,12 @@
         </h2>
 </x-slot>
 
-<div class="">
+<div class="p-4">
         <x-jet-secondary-button wire:click="view()" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100     -my-20 ">
              Voter Details
          </x-jet-button>
 
-        <h4 class="py-2">Voter Information</h4>
+        <h4 class="py-2 pt-8">Voter Information</h4>
 
         <table class="table-fixed w-full">
                               <tr>
@@ -29,7 +29,7 @@
                                </tr>
             </table>
 
-            <h4 class="py-2">Profile Information</h4>
+            <h4 class="py-2 pt-8">Profile Information</h4>
 
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
@@ -52,7 +52,7 @@
                                @endforeach
             </table>
 
-            <h4 class="py-2">Services Information</h4>
+            <h4 class="py-2 pt-8">Services Information</h4>
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
                                   <th>Service Type</th>
