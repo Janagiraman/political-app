@@ -4,39 +4,33 @@
         </h2>
 </x-slot>
 
-<div class="py-12">
+<div class="">
         <x-jet-secondary-button wire:click="view()" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100     -my-20 ">
              Voter Details
          </x-jet-button>
 
-         @php
+        s
 
-            echo '<pre>';
-             // print_r($voterDetails);
-
-         @endphp
-      
         <div>Voter Information</div>
         <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
-                                 
-                                  <th class="   ">Booth No</th><td>{{ $voterDetails->booth_no }}</td>
+                                  <th class="px-4 py-2">Booth No</th><td>{{ $voterDetails->booth_no }}</td>
                                </tr>
                                <tr class="bg-gray-100">
-                                 
-                                  <th class="   ">Booth Name</th><td>{{ $voterDetails->booth_name }}</td>
+
+                                  <th class="px-4 py-2">Booth Name</th><td>{{ $voterDetails->booth_name }}</td>
                                </tr>
                                <tr class="bg-gray-100">
-                                 
-                                  <th class="   ">Area Name</th><td>{{ $voterDetails->area_name }}</td>
+
+                                  <th class="px-4 py-2   ">Area Name</th><td>{{ $voterDetails->area_name }}</td>
                                </tr>
                                <tr class="bg-gray-100">
-                                 
-                                  <th class="   ">Epic No</th><td>{{ $voterDetails->epic_no }}</td>
+
+                                  <th class="px-4 py-2   ">Epic No</th><td>{{ $voterDetails->epic_no }}</td>
                                </tr>
                                <tr class="bg-gray-100">
-                                 
-                                  <th class="   ">Name</th><td>{{ $voterDetails->voter_name }}</td>
+
+                                  <th class=" px-4 py-2  ">Name</th><td>{{ $voterDetails->voter_name }}</td>
                                </tr>
             </table>
 
@@ -85,12 +79,5 @@
                                    </tr>
                                @endforeach
             </table>
-
-            @php 
-                 echo '<pre>';
-                     print_r($voterServices);
-            @endphp
-
-
 
             </div>
