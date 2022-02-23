@@ -9,26 +9,28 @@
              Voter Details
          </x-jet-button>
 
-        <div>Voter Information</div>
+        <h4 class="py-2">Voter Information</h4>
+
         <table class="table-fixed w-full">
                               <tr>
-                                  <th class=" bg-gray-100 px-4 py-2">Booth No</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_no }}</td>
+                                  <th class="px-4 py-2 border">Booth No</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_no }}</td>
                                </tr>
                                <tr>
-                                  <th class="px-4 py-2">Booth Name</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_name }}</td>
+                                  <th class="px-4 py-2 border">Booth Name</th><td class=" px-4 py-2 border">{{ $voterDetails->booth_name }}</td>
                                </tr>
                                <tr>
-                                  <th class="px-4 py-2 bg-gray-100">Area Name</th><td class=" px-4 py-2 border">{{ $voterDetails->area_name }}</td>
+                                  <th class="px-4 py-2 border">Area Name</th><td class=" px-4 py-2 border">{{ $voterDetails->area_name }}</td>
                                </tr>
                                <tr>
-                                  <th class="px-4 py-2 bg-gray-100 ">Epic No</th><td class=" px-4 py-2 border">{{ $voterDetails->epic_no }}</td>
+                                  <th class="px-4 py-2 border">Epic No</th><td class=" px-4 py-2 border">{{ $voterDetails->epic_no }}</td>
                                </tr>
                                <tr>
-                                  <th class=" px-4 py-2 bg-gray-100">Name</th><td class=" px-4 py-2 border">{{ $voterDetails->voter_name }}</td>
+                                  <th class="px-4 py-2 border">Name</th><td class=" px-4 py-2 border">{{ $voterDetails->voter_name }}</td>
                                </tr>
             </table>
 
-            <div>Profile Inforamtion</div>
+            <h4 class="py-2">Profile Information</h4>
+
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
                                   <th>Doc Name</th>
@@ -40,17 +42,17 @@
                                </tr>
                                @foreach($voterProfile as $key =>  $profile)
                                    <tr>
-                                       <td>{{ $profile->doc_type }}</td>
-                                       <td>{{ $profile->value }}</td>
-                                       <td><button>View</button></td>
-                                       <td>{{ $profile->latitude }}</td>
-                                       <td>{{ $profile->longitude }}</td>
-                                       <td>{{ $profile->user_id }}</td>
+                                       <td class="px-4 py-2 border">{{ $profile->doc_type }}</td>
+                                       <td class="px-4 py-2 border">{{ $profile->value }}</td>
+                                       <td class="px-4 py-2 border"><button>View</button></td>
+                                       <td class="px-4 py-2 border">{{ $profile->latitude }}</td>
+                                       <td class="px-4 py-2 border">{{ $profile->longitude }}</td>
+                                       <td class="px-4 py-2 border">{{ $profile->user_id }}</td>
                                    </tr>
                                @endforeach
             </table>
 
-            <div>Services Inforamtion</div>
+            <h4 class="py-2">Services Information</h4>
             <table class="table-fixed w-full">
                               <tr class="bg-gray-100">
                                   <th>Service Type</th>
@@ -63,13 +65,13 @@
                                </tr>
                                @foreach($voterServices as $key =>  $service)
                                    <tr>
-                                       <td>{{ $service->service_type }}</td>
-                                       <td>{{ $service->is_provide_service }}</td>
-                                       <td><button>View</button></td>
-                                       <td>{{ $service->comment }}</td>
-                                       <td>{{ $service->latitude }}</td>
-                                       <td>{{ $service->longitude }}</td>
-                                       <td>{{ $service->user_id }}</td>
+                                       <td class="px-4 py-2 border">{{ $service->service_type }}</td>
+                                       <td class="px-4 py-2 border">{{ $service->is_provide_service }}</td>
+                                       <td class="px-4 py-2 border"><button>View</button></td>
+                                       <td class="px-4 py-2 border">{{ $service->comment }}</td>
+                                       <td class="px-4 py-2 border">{{ $service->latitude }}</td>
+                                       <td class="px-4 py-2 border">{{ $service->longitude }}</td>
+                                       <td class="px-4 py-2 border">{{ $service->user_id }}</td>
                                    </tr>
                                @endforeach
             </table>
