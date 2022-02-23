@@ -36,18 +36,18 @@
                                   <th class="px-4 py-2 text-left">Doc Name</th>
                                   <th class="px-4 py-2 text-left">Details</th>
                                   <th class="px-4 py-2 text-left">Image</th>
-                                  <th class="px-4 py-2 text-left">Latitude</th>
-                                  <th class="px-4 py-2 text-left">longitude</th>
+                                  <th class="px-4 py-2 text-left">Location</th>
                                   <th class="px-4 py-2 text-left">Updated By</th>
+                                  <th class="px-4 py-2 text-left">Updated Date</th>
                                </tr>
                                @foreach($voterProfile as $key =>  $profile)
                                    <tr>
                                        <td class="px-4 py-2 border">{{ $profile->doc_type }}</td>
                                        <td class="px-4 py-2 border">{{ $profile->value }}</td>
                                        <td class="px-4 py-2 border"><button>View</button></td>
-                                       <td class="px-4 py-2 border">{{ $profile->latitude }}</td>
-                                       <td class="px-4 py-2 border">{{ $profile->longitude }}</td>
+                                       <td class="px-4 py-2 border"><button>View Location</button></td>
                                        <td class="px-4 py-2 border">{{ $profile->user_id }}</td>
+                                       <td class="px-4 py-2 border">12/12/1009</td>
                                    </tr>
                                @endforeach
             </table>
@@ -61,6 +61,7 @@
                                   <th class="px-4 py-2 text-left">Comment</th>
                                   <th class="px-4 py-2 text-left">Location</th>
                                   <th class="px-4 py-2 text-left">Updated By</th>
+                                  <th class="px-4 py-2 text-left">Updated Date</th>
                                </tr>
                                @foreach($voterServices as $key =>  $service)
                                    <tr>
@@ -70,6 +71,7 @@
                                        <td class="px-4 py-2 border">{{ $service->comment }}</td>
                                        <td class="px-4 py-2 border"><button>View Location</button></td>
                                        <td class="px-4 py-2 border">{{ $service->user->name }}</td>
+                                       <td class="px-4 py-2 border">12/12/1009</td>
                                    </tr>
                                @endforeach
             </table>
