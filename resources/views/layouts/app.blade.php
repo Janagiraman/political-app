@@ -17,7 +17,7 @@
         <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 
 
-        <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet"> -->
+        <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel=service"stylesheet"> -->
 
 
         @livewireStyles

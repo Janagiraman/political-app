@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\UserRole;
 use App\Models\VoterInfo;
+use App\Models\VoterService;
 
 class User extends Authenticatable
 {

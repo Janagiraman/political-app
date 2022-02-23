@@ -13,4 +13,9 @@ class Service extends Model
         'name', 
         'description'        
     ];
+
+    public function voterService()
+    {
+        return $this->hasOne(VoterService::class);
+    }
 }

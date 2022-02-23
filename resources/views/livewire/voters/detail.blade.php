@@ -86,4 +86,11 @@
                                @endforeach
             </table>
 
+            @php 
+                 echo '<pre>';
+                     print_r($voterServices);
+            @endphp
+
+
+
             </div>
