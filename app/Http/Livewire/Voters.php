@@ -63,7 +63,7 @@ class Voters extends Component
         $this->voterDetailMode = true;
         $this->voterDetails = Voter::where('id', $id)->first();
         $this->voterProfile = VoterInfos::where('voter_id', $id)->get();
-        $this->voterServices = VoterService::with('service:id,name')->where('voter_id', $id)->get(); 
+        $this->voterServices = VoterService::with('user:id,name','service:id,name')->where('voter_id', $id)->get(); 
         
         
     }

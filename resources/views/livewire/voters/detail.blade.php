@@ -69,15 +69,17 @@
                                </tr>
                                @foreach($voterServices as $key =>  $service)
                                    <tr>
-                                       <td>{{ $service->service_type }}</td>
+                                       <td>{{ $service->service->name }}</td>
                                        <td>{{ $service->is_provide_service }}</td>
                                        <td><button>View</button></td>
                                        <td>{{ $service->comment }}</td>
                                        <td>{{ $service->latitude }}</td>
                                        <td>{{ $service->longitude }}</td>
-                                       <td>{{ $service->user_id }}</td>
+                                       <td>{{ $service->user->name }}</td>
                                    </tr>
                                @endforeach
             </table>
 
             </div>
+
+            
