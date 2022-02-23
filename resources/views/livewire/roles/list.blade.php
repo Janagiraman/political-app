@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Customers') }}
         </h2>
-  
+
 </x-slot>
 
 <div class="py-12">
@@ -15,18 +15,18 @@
                 @include('livewire.roles.create')
         @else
             <table class="table-fixed w-full">
-                          
+
                             <x-jet-secondary-button wire:click="create()" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100 px-4 py-2 my-6">
                                         Add New Role
                             </x-jet-button>
-                    
+
                             <thead>
                                 <tr class="bg-gray-100">
-                                    <th class="px-4 py-2 w-20">No.</th>
-                                    <th class="px-4 py-2">Name</th>
-                                    <th class="px-4 py-2">Description</th>                                   
-                                    <th class="px-4 py-2">Action</th>
-                                </tr>   
+                                    <th class="px-4 py-2 text-left">No.</th>
+                                    <th class="px-4 py-2 text-left">Name</th>
+                                    <th class="px-4 py-2 text-left">Description</th>
+                                    <th class="px-4 py-2 text-left">Action</th>
+                                </tr>
                             </thead>
                             <tbody>
                             @php $no = 1; @endphp
@@ -41,7 +41,7 @@
                                         Edit
                                     </x-jet-button>
                                     @endif
-                                    
+
                                     </td>
                                 </tr>
                                 @endforeach
@@ -54,16 +54,16 @@
                     <x-slot name="title">
                         {{ __('Delete Item') }}
                     </x-slot>
-            
+
                     <x-slot name="content">
                         {{ __('Are you sure you want to delete Item? ') }}
                     </x-slot>
-            
+
                     <x-slot name="footer">
                         <x-jet-secondary-button wire:click="$set('confirmingItemDeletion', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
                         </x-jet-secondary-button>
-            
+
                         <x-jet-danger-button class="ml-2" wire:click="deleteItem({{ $confirmingItemDeletion }})" wire:loading.attr="disabled">
                             {{ __('Delete') }}
                         </x-jet-danger-button>
