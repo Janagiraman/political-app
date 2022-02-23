@@ -110,11 +110,6 @@ class VotersController extends Controller
 
   public function voterServices(Request $request, Exception $e){
 
-    echo 'cominididj';exit;
-    if ($e instanceof TokenMismatchException){
-        // Redirect to a form. Here is an example of how I handle mine
-        return redirect($request->fullUrl())->with('csrf_error',"Oops! Seems you couldn't submit form for a long time. Please try again.");
-    }
     $value = $request->epic_no;
     if($value != ''){
         $voterService = VoterService::with('user:id,name')->where('epic_no','=', $value)->get();

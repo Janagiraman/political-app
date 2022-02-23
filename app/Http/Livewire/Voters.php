@@ -19,7 +19,7 @@ class Voters extends Component
 {
     use WithFileUploads;
     public $updateMode,$importMode, $voterDetailMode = false;
-    public $name, $description, $confirmingItemDeletion;
+    public $name, $description, $confirmingItemDeletion, $serviceImageView, $profileImageView;
     public $show = true;
     public $batchId;
     public $importFile, $import_file;
@@ -27,7 +27,7 @@ class Voters extends Component
     public $importFilePath;
     public $importFinished = false;
     public $searchTerm;
-    public $voterDetails, $voterProfile, $voterServices;
+    public $voterDetails, $voterProfile, $voterServices, $service_image, $profile_image;
 
 
     public function render()
@@ -118,5 +118,24 @@ class Voters extends Component
         $this->name = null;
         $this->description = null;      
         $this->render();
+    }
+    public function serviceImageView($id) 
+    {
+        $this->resetErrorBag();
+       // echo 'cominii=='.$image;
+       $voterService = VoterService::where('id', $id)->first();
+        $this->service_image = $voterService->image;
+        
+        $this->serviceImageView = true;
+    }
+
+    public function profileImageView($id) 
+    {
+        $this->resetErrorBag();
+       // echo 'cominii=='.$image;
+       $voterInfo = VoterInfos::where('id', $id)->first();
+        $this->profile_image = $voterInfo->image;
+        
+        $this->profileImageView = true;
     }
 }

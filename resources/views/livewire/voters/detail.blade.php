@@ -44,10 +44,16 @@
                                    <tr>
                                        <td class="px-4 py-2 border">{{ $profile->doc_type }}</td>
                                        <td class="px-4 py-2 border">{{ $profile->value }}</td>
-                                       <td class="px-4 py-2 border"><button>View</button></td>
+                                       <td class="px-4 py-2 border">
+                                            @if($profile->image!='')
+                                                    <x-jet-button wire:click="profileImageView({{ $profile->id }})" wire:loading.attr="disabled" class="bg-blue-500 hover:bg-blue-700">
+                                                        View
+                                                    </x-jet-button>
+                                            @endif
+                                       </td>
                                        <td class="px-4 py-2 border"><button>View Location</button></td>
-                                       <td class="px-4 py-2 border">{{ $profile->user_id }}</td>
-                                       <td class="px-4 py-2 border">12/12/1009</td>
+                                       <td class="px-4 py-2 border">{{ $profile->user->name }}</td>
+                                       <td class="px-4 py-2 border">{{ date('d-m-Y', strtotime($profile->updated_at)) }} </td>
                                    </tr>
                                @endforeach
             </table>
@@ -67,15 +73,60 @@
                                    <tr>
                                        <td class="px-4 py-2 border">{{ $service->service->name }}</td>
                                        <td class="px-4 py-2 border">{{ $service->is_provide_service }}</td>
-                                       <td class="px-4 py-2 border"><button>View</button></td>
+                                       <td class="px-4 py-2 border"> 
+                                           @if($service->image!='')
+                                             <x-jet-button wire:click="serviceImageView({{ $service->id }})" wire:loading.attr="disabled" class="bg-blue-500 hover:bg-blue-700">
+                                                View
+                                             </x-jet-button>
+                                            @endif
+                                        </td>
                                        <td class="px-4 py-2 border">{{ $service->comment }}</td>
                                        <td class="px-4 py-2 border"><button>View Location</button></td>
                                        <td class="px-4 py-2 border">{{ $service->user->name }}</td>
-                                       <td class="px-4 py-2 border">12/12/1009</td>
+                                       <td class="px-4 py-2 border">{{ date('d-m-Y', strtotime($service->updated_at)) }}</td>
                                    </tr>
                                @endforeach
             </table>
 
-            </div>
+            <x-jet-dialog-modal wire:model="serviceImageView">
+                    <x-slot name="title">
+                       Service Image
+                    </x-slot>
+ 
+                    <x-slot name="content">
+                       @php 
+                            $imageUrl =  url('').'/service_images/'.$service_image;
+                       @endphp
+                       <img src={{$imageUrl}} />
+                    </x-slot>
+ 
+                    <x-slot name="footer">
+                        <x-jet-secondary-button wire:click="$set('serviceImageView', false)" wire:loading.attr="disabled">
+                            {{ __('Close') }}
+                        </x-jet-secondary-button>
+            
+                        
+                    </x-slot>
+    </x-jet-dialog-modal>
 
+    <x-jet-dialog-modal wire:model="profileImageView">
+                    <x-slot name="title">
+                       Profile Image
+                    </x-slot>
+ 
+                    <x-slot name="content">
+                       @php 
+                            $imageUrl =  url('').'/images/voters/'.$profile_image;
+                       @endphp
+                       <img src={{$imageUrl}} />
+                    </x-slot>
+ 
+                    <x-slot name="footer">
+                        <x-jet-secondary-button wire:click="$set('profileImageView', false)" wire:loading.attr="disabled">
+                            {{ __('Close') }}
+                        </x-jet-secondary-button>
+            
+                        
+                    </x-slot>
+    </x-jet-dialog-modal>
 
