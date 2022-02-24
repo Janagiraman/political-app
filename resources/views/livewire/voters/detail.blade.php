@@ -147,8 +147,8 @@
  
                     <x-slot name="content">
                               <iframe 
-                                    width="300" 
-                                    height="170" 
+                                    width="600" 
+                                    height="500" 
                                     frameborder="0" 
                                     scrolling="no" 
                                     marginheight="0" 
