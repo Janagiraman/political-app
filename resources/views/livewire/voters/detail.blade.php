@@ -87,7 +87,7 @@
                                         </td>
                                        <td class="px-4 py-2 border">{{ $service->comment }}</td>
                                        <td class="px-4 py-2 border">
-                                       <x-jet-button wire:click="locationView({{ $service->id }})" wire:loading.attr="disabled" class="bg-blue-500 hover:bg-blue-700">
+                                       <x-jet-button wire:click="serviceLocationView({{ $service->id }})" wire:loading.attr="disabled" class="bg-blue-500 hover:bg-blue-700">
                                                         Location
                                         </x-jet-button>
                                         
