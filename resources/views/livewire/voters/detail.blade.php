@@ -93,7 +93,7 @@
                                                     scrolling="no" 
                                                     marginheight="0" 
                                                     marginwidth="0" 
-                                                    src="https://maps.google.com/maps?q='+{{ $service->latitude }}+','+{{ $service->longitude }}+'&hl=es&z=14&amp;output=embed"
+                                                    src="https://maps.google.com/maps?q={{ $service->latitude }},{{ $service->longitude }}&hl=es&z=14&amp;output=embed"
                                                     >
                                             </iframe>
                                     
