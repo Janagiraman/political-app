@@ -74,6 +74,11 @@
                                   <th class="px-4 py-2 text-left">Updated Date</th>
                                </tr>
                                @foreach($voterServices as $key =>  $service)
+
+                                  @php 
+                                      echo '<pre>';
+                                          print_r($service);
+                                  @endphp
                                    <tr>
                                        <td class="px-4 py-2 border">{{ $service->service->name }}</td>
                                        <td class="px-4 py-2 border">{{ $service->is_provide_service }}</td>
