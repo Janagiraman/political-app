@@ -142,7 +142,7 @@
     </x-jet-dialog-modal>
     <x-jet-dialog-modal wire:model="locationView">
                     <x-slot name="title">
-                       Profile Image
+                     Location Details
                     </x-slot>
  
                     <x-slot name="content">
