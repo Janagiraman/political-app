@@ -26,7 +26,7 @@ class Voters extends Component
     public $importing = false;
     public $importFilePath;
     public $importFinished = false;
-    public $searchTerm;
+    public $searchTerm, $latitude, $longitude;
     public $voterDetails, $voterProfile, $voterServices, $service_image, $profile_image;
 
 
@@ -143,9 +143,19 @@ class Voters extends Component
     {
         $this->resetErrorBag();
        // echo 'cominii=='.$image;
-       $voterInfo = VoterInfos::where('id', $id)->first();
+        $voterInfo = VoterInfos::where('id', $id)->first();
         $this->latitude = $voterInfo->latitude;
         $this->longitude = $voterInfo->longitude;
+        
+        $this->locationView = true;
+    }
+    public function servciceLocationView($id) 
+    {
+        $this->resetErrorBag();
+       // echo 'cominii=='.$image;
+        $voterService = VoterService::where('id', $id)->first();
+        $this->latitude = $voterService->latitude;
+        $this->longitude = $voterService->longitude;
         
         $this->locationView = true;
     }

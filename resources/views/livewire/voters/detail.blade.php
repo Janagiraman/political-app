@@ -53,7 +53,7 @@
                                        </td>
                                        <td class="px-4 py-2 border"> 
                                                     <x-jet-button wire:click="locationView({{ $profile->id }})" wire:loading.attr="disabled" class="bg-blue-500 hover:bg-blue-700">
-                                                        View Location
+                                                        Location
                                                     </x-jet-button>
                                         </td>
                                        <td class="px-4 py-2 border">{{ $profile->user->name }}</td>
@@ -75,10 +75,6 @@
                                </tr>
                                @foreach($voterServices as $key =>  $service)
 
-                                  @php 
-                                      echo '<pre>';
-                                          print_r($service);
-                                  @endphp
                                    <tr>
                                        <td class="px-4 py-2 border">{{ $service->service->name }}</td>
                                        <td class="px-4 py-2 border">{{ $service->is_provide_service }}</td>
@@ -90,17 +86,11 @@
                                             @endif
                                         </td>
                                        <td class="px-4 py-2 border">{{ $service->comment }}</td>
-                                       <td class="px-4 py-2 border"><button>View Location</button>
-                                         <iframe 
-                                                    width="300" 
-                                                    height="170" 
-                                                    frameborder="0" 
-                                                    scrolling="no" 
-                                                    marginheight="0" 
-                                                    marginwidth="0" 
-                                                    src="https://maps.google.com/maps?q={{ $service->latitude }},{{ $service->longitude }}&hl=es&z=14&amp;output=embed"
-                                                    >
-                                            </iframe>
+                                       <td class="px-4 py-2 border">
+                                       <x-jet-button wire:click="locationView({{ $service->id }})" wire:loading.attr="disabled" class="bg-blue-500 hover:bg-blue-700">
+                                                        Location
+                                        </x-jet-button>
+                                        
                                     
                                        </td>
                                        <td class="px-4 py-2 border">{{ $service->user->name }}</td>
@@ -156,7 +146,16 @@
                     </x-slot>
  
                     <x-slot name="content">
-                       <div id="map_canvas"></div>
+                              <iframe 
+                                    width="300" 
+                                    height="170" 
+                                    frameborder="0" 
+                                    scrolling="no" 
+                                    marginheight="0" 
+                                    marginwidth="0" 
+                                    src="https://maps.google.com/maps?q={{ $latitude }},{{ $longitude }}&hl=es&z=14&amp;output=embed"
+                                    >
+                               </iframe>
                     </x-slot>
  
                     <x-slot name="footer">
@@ -166,27 +165,6 @@
             
                         
                     </x-slot>
-                    <script>
-                            function initialize() {
-                            var myLatlng = new google.maps.LatLng(-34.397, 150.644);
-                            var myOptions = {
-                                zoom: 8,
-                                center: myLatlng,
-                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                            }
-                            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-                            }
-
-                            function loadScript() {
-                            var script = document.createElement("script");
-                            script.type = "text/javascript";
-                            script.src = "http://maps.google.com/maps/api/js?sensor=false&callback=initialize";
-                            document.body.appendChild(script);
-                            }
-
-                            window.onload = loadScript;
-
-
-                    </script>   
+                     
     </x-jet-dialog-modal>
 
