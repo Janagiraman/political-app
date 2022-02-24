@@ -108,9 +108,9 @@ class VotersController extends Controller
 
   }
 
-  public function voterServices(Request $request, Exception $e){
+  public function voterServices(Request $request){
 
-    $value = $request->epic_no;
+    $value = $request->epic_no; 
     if($value != ''){
         $voterService = VoterService::with('user:id,name')->where('epic_no','=', $value)->get();
     }
