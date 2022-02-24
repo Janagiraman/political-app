@@ -19,7 +19,7 @@ class Voters extends Component
 {
     use WithFileUploads;
     public $updateMode,$importMode, $voterDetailMode = false;
-    public $name, $description, $confirmingItemDeletion, $serviceImageView, $profileImageView, $locationView;
+    public $name, $description, $confirmingItemDeletion, $serviceImageView, $profileImageView, $locationView, $serviceLocationView;
     public $show = true;
     public $batchId;
     public $importFile, $import_file;
