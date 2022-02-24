@@ -51,7 +51,11 @@
                                                     </x-jet-button>
                                             @endif
                                        </td>
-                                       <td class="px-4 py-2 border"><button>View Location</button></td>
+                                       <td class="px-4 py-2 border"> 
+                                                    <x-jet-button wire:click="locationView({{ $profile->id }})" wire:loading.attr="disabled" class="bg-blue-500 hover:bg-blue-700">
+                                                        View Location
+                                                    </x-jet-button>
+                                        </td>
                                        <td class="px-4 py-2 border">{{ $profile->user->name }}</td>
                                        <td class="px-4 py-2 border">{{ date('d-m-Y', strtotime($profile->updated_at)) }} </td>
                                    </tr>
@@ -81,14 +85,26 @@
                                             @endif
                                         </td>
                                        <td class="px-4 py-2 border">{{ $service->comment }}</td>
-                                       <td class="px-4 py-2 border"><button>View Location</button></td>
+                                       <td class="px-4 py-2 border"><button>View Location</button>
+                                         <iframe 
+                                                    width="300" 
+                                                    height="170" 
+                                                    frameborder="0" 
+                                                    scrolling="no" 
+                                                    marginheight="0" 
+                                                    marginwidth="0" 
+                                                    src="https://maps.google.com/maps?q='+{{ $service->latitude }}+','+{{ $service->longitude }}+'&hl=es&z=14&amp;output=embed"
+                                                    >
+                                            </iframe>
+                                    
+                                       </td>
                                        <td class="px-4 py-2 border">{{ $service->user->name }}</td>
                                        <td class="px-4 py-2 border">{{ date('d-m-Y', strtotime($service->updated_at)) }}</td>
                                    </tr>
                                @endforeach
             </table>
 
-            <x-jet-dialog-modal wire:model="serviceImageView">
+    <x-jet-dialog-modal wire:model="serviceImageView">
                     <x-slot name="title">
                        Service Image
                     </x-slot>
@@ -128,5 +144,44 @@
             
                         
                     </x-slot>
+    </x-jet-dialog-modal>
+    <x-jet-dialog-modal wire:model="locationView">
+                    <x-slot name="title">
+                       Profile Image
+                    </x-slot>
+ 
+                    <x-slot name="content">
+                       <div id="map_canvas"></div>
+                    </x-slot>
+ 
+                    <x-slot name="footer">
+                        <x-jet-secondary-button wire:click="$set('locationView', false)" wire:loading.attr="disabled">
+                            {{ __('Close') }}
+                        </x-jet-secondary-button>
+            
+                        
+                    </x-slot>
+                    <script>
+                            function initialize() {
+                            var myLatlng = new google.maps.LatLng(-34.397, 150.644);
+                            var myOptions = {
+                                zoom: 8,
+                                center: myLatlng,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            }
+                            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                            }
+
+                            function loadScript() {
+                            var script = document.createElement("script");
+                            script.type = "text/javascript";
+                            script.src = "http://maps.google.com/maps/api/js?sensor=false&callback=initialize";
+                            document.body.appendChild(script);
+                            }
+
+                            window.onload = loadScript;
+
+
+                    </script>   
     </x-jet-dialog-modal>
 
