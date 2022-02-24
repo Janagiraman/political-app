@@ -149,7 +149,7 @@ class Voters extends Component
         
         $this->locationView = true;
     }
-    public function servciceLocationView($id) 
+    public function serviceLocationView($id) 
     {
         $this->resetErrorBag();
        // echo 'cominii=='.$image;
