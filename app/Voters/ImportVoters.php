@@ -5,6 +5,8 @@ namespace App\Voters;
 use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
 use App\Imports\VotersImport;
+use App\Imports\ExcelUtils;
+use App\Imports\TestImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -35,6 +37,9 @@ class ImportVoters implements ShouldQueue
      */
     public function handle()
     {
-        Excel::import(new VotersImport, $this->uploadFile);
+        
+        $ts =  Excel::import(new VotersImport, $this->uploadFile);
+       
+  
     }
 }

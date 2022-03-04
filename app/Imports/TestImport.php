@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 
 
 
-class VotersImport implements ToModel, WithHeadingRow, WithEvents
+class TestImport implements ToModel, WithHeadingRow, WithEvents
 {
     public $sheetNames;
     public $sheetData;

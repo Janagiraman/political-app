@@ -89,7 +89,7 @@ class ServiceController extends Controller
            $comment = $request->comment;
            $latitude = $request->latitude;
            $longitude = $request->longitude;
-           $user_id = $request->user_id;
+           $user_id = $request->user_id;   
 
            $voterService->epic_no = $epic_no;
            $voterService->voter_id = $request->voter_id;
