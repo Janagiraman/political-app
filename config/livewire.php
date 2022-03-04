@@ -89,10 +89,10 @@ return [
         'preview_mimes' => [   // Supported file types for temporary pre-signed file URLs.
             'png', 'gif', 'bmp', 'svg', 'wav', 'mp4',
             'mov', 'avi', 'wmv', 'mp3', 'm4a',
-            'jpg', 'jpeg', 'mpga', 'webp', 'wma','xls'
+            'jpg', 'jpeg', 'mpga', 'webp', 'wma','xls','xlsx'
         ],
         'max_upload_time' => 5, // Max duration (in minutes) before an upload gets invalidated.
-        'rules' => 'file|mimes:png,jpg,pdf,xls,xlsx,csv|max:52428800'
+        'rules' => 'file|mimes:xls,xlsx,csv|max:52428800'
     ],
 
     /*
