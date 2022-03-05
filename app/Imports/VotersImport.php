@@ -7,12 +7,13 @@ use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
+use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
-
-
-class VotersImport implements ToModel, WithHeadingRow, WithEvents,WithChunkReading, ShouldQueue
+class VotersImport implements ToModel, WithHeadingRow, WithEvents,WithChunkReading, ShouldQueue, WithProgressBar
 {
+    use Importable;
+
     public $sheetNames;
     public $sheetData;
 
