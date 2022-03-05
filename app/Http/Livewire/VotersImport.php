@@ -12,7 +12,7 @@ use Maatwebsite\Excel\Concerns\WithChunkReading;
 // use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
-class VotersImport implements ToModel, WithHeadingRow, WithChunkReading
+class VotersImport implements ToModel, WithHeadingRow //WithChunkReading
 {
      private $voters;
 
@@ -32,8 +32,8 @@ class VotersImport implements ToModel, WithHeadingRow, WithChunkReading
         ]);
     }
 
-    public function chunkSize(): int
-    {
-        return 5000;
-    }
+    // public function chunkSize(): int
+    // {
+    //     return 5000;
+    // }
 }

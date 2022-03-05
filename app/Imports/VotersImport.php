@@ -11,27 +11,27 @@ use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
-class VotersImport implements ToModel, WithHeadingRow, WithEvents,WithChunkReading, WithProgressBar
+class VotersImport implements ToModel, WithHeadingRow
 {
-    use Importable;
+    // use Importable;
 
-    public $sheetNames;
-    public $sheetData;
+    // public $sheetNames;
+    // public $sheetData;
 
     public function __construct(){
-        $this->sheetNames = [];
-        $this->sheetData = [];
+        // $this->sheetNames = [];
+        // $this->sheetData = [];
     }
    
-    public function registerEvents(): array
-    {
-        return [
-            BeforeSheet::class => function(BeforeSheet $event) {
-                $this->sheetNames[] = $event->getSheet()->getDelegate()->getTitle();
+    // public function registerEvents(): array
+    // {
+    //     return [
+    //         BeforeSheet::class => function(BeforeSheet $event) {
+    //             $this->sheetNames[] = $event->getSheet()->getDelegate()->getTitle();
                 
-            } 
-        ];
-    }
+    //         } 
+    //     ];
+    // }
 
     public function model(array $row)
     {

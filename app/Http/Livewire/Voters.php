@@ -72,7 +72,7 @@ class Voters extends Component
 
     public function import(){
 
-        ini_set('memory_limit','1024M');
+        // ini_set('memory_limit','1024M');
         
         $this->validate([
             'import_file' => 'required'

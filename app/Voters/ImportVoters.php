@@ -38,7 +38,7 @@ class ImportVoters implements ShouldQueue
     public function handle()
     {
         
-        $ts =  Excel::import(new VotersImport, $this->uploadFile);
+        Excel::import(new VotersImport, $this->uploadFile);
        
   
     }
