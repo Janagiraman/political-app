@@ -36,7 +36,7 @@ class Voters extends Component
     {
         $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.voters.list', [
-            'voters' => Voter::where('epic_no','like', $searchTerm)->paginate(50),
+            'voters' => Voter::where('epic_no','like', $searchTerm)->paginate(200),
         ]);
         
     }
