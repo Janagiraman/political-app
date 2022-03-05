@@ -1,14 +1,17 @@
 <?php
 namespace App\Imports;
 use App\Models\Voter;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 
 
 
-class VotersImport implements ToModel, WithHeadingRow, WithEvents
+
+class VotersImport implements ToModel, WithHeadingRow, WithEvents,WithChunkReading, ShouldQueue
 {
     public $sheetNames;
     public $sheetData;
@@ -48,4 +51,8 @@ class VotersImport implements ToModel, WithHeadingRow, WithEvents
         }
     }
 
+    public function chunkSize(): int
+    {
+        return 1000;
+    }
 }
