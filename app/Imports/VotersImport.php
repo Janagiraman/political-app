@@ -4,11 +4,11 @@ use App\Models\Voter;
 // use Illuminate\Contracts\Queue\ShouldQueue;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\ToCollection;
+// use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithEvents;
-use Maatwebsite\Excel\Concerns\WithChunkReading;
-use Maatwebsite\Excel\Concerns\WithProgressBar;
+// use Maatwebsite\Excel\Concerns\WithEvents;
+// use Maatwebsite\Excel\Concerns\WithChunkReading;
+// use Maatwebsite\Excel\Concerns\WithProgressBar;
 
 
 class VotersImport implements ToModel, WithHeadingRow
@@ -53,6 +53,7 @@ class VotersImport implements ToModel, WithHeadingRow
         }
     }
 
+  
     public function chunkSize(): int
     {
         return 1000;

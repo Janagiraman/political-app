@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
-use App\Imports\VotersImport;
+// use App\Imports\VotersImport;
 
 class Voters extends Component
 {
