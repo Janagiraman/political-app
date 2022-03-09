@@ -45,7 +45,7 @@ class VotersImport implements ToModel, WithHeadingRow
                          'booth_name' => $row['booth_name'],
                          'area_name' => $row['village_area_name'],
                         // 'ward_name' => $row['panchayath_ward_name'],
-                         'sl_no' => $row['sl_no'],
+                         //'sl_no' => $row['sl_no'],
                          'epic_no' => $row['epic_no'],
                          'voter_name' => $row['name'],
                      ]);

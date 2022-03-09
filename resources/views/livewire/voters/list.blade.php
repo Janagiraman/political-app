@@ -17,12 +17,12 @@
         @else
 
             <input type="text"  class="form-control" placeholder="Search Epic No" wire:model="searchTerm" />
-            {{ $voters->links() }}
+            <div>&nbsp;</div>
             <table class="table-fixed w-full">
                           
-                            <x-jet-secondary-button wire:click="importForm()" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100 px-4 py-2 my-6">
+                            <!-- <x-jet-secondary-button wire:click="importForm()" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100 px-4 py-2 my-6">
                                         Import Voters   
-                            </x-jet-button>
+                            </x-jet-button>  -->
                     
                             <thead>
                                 <tr class="bg-gray-100">
