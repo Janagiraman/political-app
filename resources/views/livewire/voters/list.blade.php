@@ -17,7 +17,9 @@
         @else
 
             <input type="text"  class="form-control" placeholder="Search Epic No" wire:model="searchTerm" />
-            <div>&nbsp;</div>
+            <div>
+            {{ $voters->links() }}
+            </div>
             <table class="table-fixed w-full">
                           
                             <!-- <x-jet-secondary-button wire:click="importForm()" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100 px-4 py-2 my-6">
@@ -27,12 +29,12 @@
                             <thead>
                                 <tr class="bg-gray-100">
                                     <th class="px-4 py-2 w-20">No.</th>
-                                    <th class="px-4 py-2">Booth No</th>
+                                    <th class="px-4 py-2 w-20">Booth No</th>
                                     <th class="px-4 py-2">Booth Name</th>
                                     <th class="px-4 py-2">Area Name</th>
                                     <th class="px-4 py-2">Epic No</th>
                                     <th class="px-4 py-2">Name</th>
-                                    <th class="px-4 py-2">View</th>
+                                    <th class="px-4 py-2 w-1/6">View</th>
 
                                   
                                 </tr>   
