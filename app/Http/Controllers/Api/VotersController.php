@@ -164,4 +164,6 @@ class VotersController extends Controller
             'message' => 'Something went wrong'
         ]);
     }
+
+  
 }

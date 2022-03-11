@@ -136,4 +136,27 @@ class ServiceController extends Controller
             
         ];
     }
+
+    public function isServiceAdded(Request $request){
+
+        $voterService =  VoterService::where('user_id','=',$request->user_id)
+        ->where('is_provide_service','=', $request->is_provided)
+        ->where('service_type', '=', $request->service_id)->get();
+        if($voterService->isEmpty()){
+            return [
+                'status' => 2, 
+                'message' => 'proceed further',
+                
+            ];
+    
+        }
+        if($voterService){
+            return [
+                'status' => 1, 
+                'data' => $voterService,
+                
+            ];
+        }
+       
+    }
 }

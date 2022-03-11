@@ -16,7 +16,6 @@ class Voter extends Model
         'voter_name',
         'area_name',
         'ward_name',
-        'sl_no',
         'relation_name',
         'gender',
         'epic_no',

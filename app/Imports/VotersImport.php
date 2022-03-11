@@ -44,6 +44,9 @@ class VotersImport implements ToModel, WithHeadingRow
                          'booth_no' => $row['booth_no'],
                          'booth_name' => $row['booth_name'],
                          'area_name' => $row['village_area_name'],
+                         'relation_name' => $row['relation_name'],
+                         'age' => $row['age'],
+                         'gender' => $row['sex'],
                         // 'ward_name' => $row['panchayath_ward_name'],
                          //'sl_no' => $row['sl_no'],
                          'epic_no' => $row['epic_no'],
@@ -54,8 +57,8 @@ class VotersImport implements ToModel, WithHeadingRow
     }
 
   
-    public function chunkSize(): int
-    {
-        return 1000;
-    }
+    // public function chunkSize(): int
+    // {
+    //     return 1000;
+    // }
 }

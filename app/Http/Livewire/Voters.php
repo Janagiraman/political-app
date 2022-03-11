@@ -78,7 +78,15 @@ class Voters extends Component
             'import_file' => 'required'
         ]);
         
-       
+    //     Excel::imort($this->import_file, function ($reader) {
+
+    //         foreach ($reader->toArray() as $row) {
+    //            // User::firstOrCreate($row);
+    //            echo '<pre>';
+    //            print_r($row);
+    //         }
+    //     });
+    //    exit;
         $this->importing = true;
         $this->importFilePath = $this->import_file->store('imports');
         
