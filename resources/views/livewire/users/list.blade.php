@@ -27,7 +27,7 @@
                                     <th class="px-4 py-2 text-left">Name</th>
                                     <th class="px-4 py-2 text-left">Email</th>
                                     <th class="px-4 py-2 text-left">Password</th>
-                                    <th class="px-4 py-2 text-left">IMEI</th>
+
                                     <th class="px-4 py-2 text-left">Role</th>
                                     <th class="px-4 py-2 w-24 text-left">Action</th>
                                 </tr>
@@ -41,7 +41,7 @@
                                     <td class="border px-4 py-2">{{ $user->name }}</td>
                                     <td class="border px-4 py-2">{{ $user->email }}</td>
                                     <td class="border px-4 py-2">{{ $user->mobile }}</td>
-                                    <td class="border px-4 py-2">{{ $user->imei }}</td>
+
                                     <td class="border px-4 py-2">@if(isset($user->role)){{ ucfirst($user->role->role->name) }} @endif</td>
                                     <td class="border px-4 py-2">
                                            @if(isset($user->role) &&  $user->role->role->name != 'administrator')
