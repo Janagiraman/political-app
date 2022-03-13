@@ -25,11 +25,11 @@
                                     <th class="px-4 py-2 w-20 text-left">No.</th>
                                     <th class="px-4 py-2 w-24 text-left">Emp Code</th>
                                     <th class="px-4 py-2 text-left">Name</th>
-                                    <th class="px-4 py-2 text-left">Email</th>
+                                    <th class="px-4 py-2 w-24 text-left">Email</th>
                                     <th class="px-4 py-2 text-left">Password</th>
 
                                     <th class="px-4 py-2 text-left">Role</th>
-                                    <th class="px-4 py-2 w-24 text-left">Action</th>
+                                    <th class="px-4 py-2  text-left">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
