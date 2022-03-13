@@ -37,7 +37,7 @@
                                     <th class="px-4 py-2" style="width: 72px">Age</th>
                                     <th class="px-4 py-2" style="width: 72px">Gender</th>
                                     <th class="px-4 py-2">Relation Name</th>
-                                    <th class="px-4 py-2 " style="width: 82px">View</th>
+                                    <th class="px-4 py-2 " style="width: 100px">View</th>
 
 
                                 </tr>
