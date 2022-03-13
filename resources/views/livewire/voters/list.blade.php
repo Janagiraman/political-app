@@ -34,10 +34,10 @@
                                     <th class="px-4 py-2">Area Name</th>
                                     <th class="px-4 py-2">Epic No</th>
                                     <th class="px-4 py-2">Name</th>
-                                    <th class="px-4 py-2">Age</th>
-                                    <th class="px-4 py-2">Gender</th>
+                                    <th class="px-4 py-2" style="width: 72px">Age</th>
+                                    <th class="px-4 py-2" style="width: 72px">Gender</th>
                                     <th class="px-4 py-2">Relation Name</th>
-                                    <th class="px-4 py-2 w-1/6">View</th>
+                                    <th class="px-4 py-2 " style="width: 82px">View</th>
 
 
                                 </tr>
