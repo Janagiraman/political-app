@@ -6,7 +6,7 @@
 </x-slot>
 
 <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-12xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
 
         @if($updateMode)
@@ -25,11 +25,11 @@
                                     <th class="px-4 py-2 w-20 text-left">No.</th>
                                     <th class="px-4 py-2 w-24 text-left">Emp Code</th>
                                     <th class="px-4 py-2 text-left">Name</th>
-                                    <th class="px-4 py-2 text-left">Email</th>
-                                    <th class="px-4 py-2 text-left">Mobile</th>
-                                    <th class="px-4 py-2 text-left">IMEI</th>
+                                    <th class="px-4 py-2 w-24 text-left">Email</th>
+                                    <th class="px-4 py-2 text-left">Password</th>
+
                                     <th class="px-4 py-2 text-left">Role</th>
-                                    <th class="px-4 py-2 w-24 text-left">Action</th>
+                                    <th class="px-4 py-2  text-left">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,7 +41,7 @@
                                     <td class="border px-4 py-2">{{ $user->name }}</td>
                                     <td class="border px-4 py-2">{{ $user->email }}</td>
                                     <td class="border px-4 py-2">{{ $user->mobile }}</td>
-                                    <td class="border px-4 py-2">{{ $user->imei }}</td>
+
                                     <td class="border px-4 py-2">@if(isset($user->role)){{ ucfirst($user->role->role->name) }} @endif</td>
                                     <td class="border px-4 py-2">
                                            @if(isset($user->role) &&  $user->role->role->name != 'administrator')
