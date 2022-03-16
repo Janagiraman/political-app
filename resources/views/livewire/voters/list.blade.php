@@ -28,7 +28,7 @@
                     
                             <thead>
                                 <tr class="bg-gray-100">
-                                    <th class="px-4 py-2 w-20">No.</th>
+                                    <th class="px-4 py-2 w-20">Sl No</th>
                                     <th class="px-4 py-2 w-20">Booth No</th>
                                     <th class="px-4 py-2">Booth Name</th>
                                     <th class="px-4 py-2">Area Name</th>
@@ -43,10 +43,12 @@
                                 </tr>   
                             </thead>
                             <tbody>
-                            @php $no = 1; @endphp
+                                @php
+                                    $index = $voters->firstItem()
+                                @endphp
                                 @foreach($voters as $voter)
                                 <tr>
-                                    <td class="border px-4 py-2">{{ $no++ }}</td>
+                                    <td class="border px-4 py-2">{{ $index++ }}</td>
                                     <td class="border px-4 py-2">{{ $voter->booth_no }}</td>
                                     <td class="border px-4 py-2">{{ $voter->booth_name }}</td>
                                     <td class="border px-4 py-2">{{ $voter->area_name }}</td>
@@ -72,7 +74,7 @@
 
             <x-jet-confirmation-modal wire:model="confirmingItemDeletion">
                     <x-slot name="title">
-                        {{ __('Delete Item') }}
+                        {{ __('Delete Item') }}`
                     </x-slot>
             
                     <x-slot name="content">

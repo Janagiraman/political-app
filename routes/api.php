@@ -36,6 +36,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::post('voter-info','App\Http\Controllers\Api\VotersController@voterInfo')->name('voter-info');
     Route::post('voter-services','App\Http\Controllers\Api\VotersController@voterServices')->name('voter-services');
     Route::post('is-service-provided','App\Http\Controllers\Api\ServiceController@isServiceAdded')->name('is-service-provided');
+    Route::post('add-new-voter','App\Http\Controllers\Api\VotersController@addNewVoter')->name('add-new-voter');
 
     
 });

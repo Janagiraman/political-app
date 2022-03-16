@@ -172,5 +172,41 @@ class VotersController extends Controller
         ]);
     }
 
+    public function addNewVoter(Request $request){
+      
+        $booth_name = null;
+        $isVoterExist = Voter::where('epic_no','=',$request->epic_no)->first();
+        if($isVoterExist){
+            return response()->json([
+                'status' => 0,
+                'message' => 'Already exist this epic no '.$request->epic_no
+            ]);
+        }
+        if($request->booth_no!=''){
+           $booth = Voter::where('booth_no','=',$request->booth_no)->first();
+        }
+
+        $voter = new Voter();
+        $voter->epic_no = $request->epic_no;
+        $voter->booth_name = $booth->booth_name;
+        $voter->area_name = $booth->area_name;
+        $voter->booth_no = $request->booth_no;
+        $voter->age = $request->age;
+        $voter->gender = $request->gender;
+        $voter->relation_name = $request->relation_name;
+        $voter->ward_name = $request->ward_name;
+        $voter->voter_name = $request->voter_name;
+        $voter->import_by = 'M';
+        $voter->user_id = $request->user_id;
+        if($voter->save()){
+            return response()->json([
+                'status' => 1,
+                'message' => 'Successfully Inserted'
+            ]);
+        }
+
+
+    }
+
   
 }

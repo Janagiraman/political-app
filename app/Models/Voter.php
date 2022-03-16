@@ -19,7 +19,9 @@ class Voter extends Model
         'relation_name',
         'gender',
         'epic_no',
-        'age'        
+        'age',
+        'user_id',
+        'import_by'      
     ];
     
     public function voterInfo()
