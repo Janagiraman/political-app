@@ -12,6 +12,8 @@
             @include('livewire.services.create')
         @elseif($createMode)
             @include('livewire.services.create')
+        @elseif($activityMode)
+            @include('livewire.services.activity')
         @else
             <table class="table-fixed w-full">
                           

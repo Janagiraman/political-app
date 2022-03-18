@@ -47,6 +47,8 @@ Route::get('users', Users::class)->name('users');
 
 Route::get('services', Services::class)->name('services');
 
+// Route::get('/activities', [Services::class, 'serviceActivities'])->name('activities');
+
 Route::get('voters', Voters::class)->name('voters');
 
 Route::get('cities', Cities::class)->name('cities');
@@ -54,6 +56,7 @@ Route::get('cities', Cities::class)->name('cities');
 Route::get('reports', Reports::class)->name('reports');
 
 Route::get('import-voters', [HomeController::class, 'index'])->name('import-voters');
+
 
 
  

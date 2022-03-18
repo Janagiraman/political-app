@@ -45,7 +45,7 @@
                   <div class="md:w-1/2 m-2">
                             <x-jet-label for="mobile" value="{{ __('Mobile') }}" />
                             <input class="appearance-none block w-4/5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4   leading-tight focus:outline-none focus:bg-white" id="grid-first-name"
-                              name="mobile" type="text" placeholder="" wire:model.defer="Password">
+                              name="mobile" type="text" placeholder="" wire:model.defer="mobile">
                              @error('mobile') <span class="font-mono text-xs text-red-700">{{ $message }}</span> @enderror
                  </div>
             </div>
@@ -64,18 +64,6 @@
                              @error('imei') <span class="font-mono text-xs text-red-700">{{ $message }}</span> @enderror
                  </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
             @if($createMode)
                   <x-jet-button wire:click.prevent="store()" class="bg-orange-500 hover:bg-orange-700 ml-2">
                         Save

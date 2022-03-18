@@ -16,7 +16,7 @@ class Users extends Component
     public $updateMode,$createMode = false;
     public $show = true;
     public $users, $role, $roles, $name, $email, $mobile, $imei, $city, $address,
-           $confirmingItemDeletion, $user_id, $role_id;
+           $confirmingItemDeletion, $user_id, $role_id, $Password;
     public $emp_code, $designation, $date_of_join, $basic_pay,
            $hra,$conveyance,$gratuity_pay,$special_allowance,$variable_incentive, $city_id, 
            $emp_detail_id, $latitude, $longitude;
@@ -71,6 +71,8 @@ class Users extends Component
            
             
         ]);
+
+       
         $userId =  User::create([
             'name' => $this->name,
             'email' => $this->email,

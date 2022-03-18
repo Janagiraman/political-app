@@ -3,12 +3,15 @@
 namespace App\Http\Livewire;
 
 use App\Models\Service;
+use App\Models\VoterService;
 use Livewire\Component;
+use Carbon\Carbon;
+
 
 class Services extends Component
 {
-    public $updateMode,$createMode = false;
-    public $roles, $name, $description, $confirmingItemDeletion;
+    public $updateMode,$createMode, $activityMode = false;
+    public $roles, $name, $description, $confirmingItemDeletion, $activities;
     public $show = true;
 
     public function render()
@@ -74,6 +77,20 @@ class Services extends Component
         }
         $this->createMode = false;
         $this->resetInput();
+    }
+
+    public function serviceActivities(){
+
+        $current_date =  Carbon::now();
+
+        $this->updateMode = false;
+        $this->activityMode = true;
+
+        $one_weak =  Carbon::now()->subDays(7);
+
+        $this->activities = VoterService::whereDate('created_at','<=', $current_date)
+            ->whereDate('created_at','>=', $one_weak)->get();
+        return view('livewire.services.list');
     }
 
     public function confirmItemDeletion( $id) 
