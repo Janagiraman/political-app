@@ -79,19 +79,7 @@ class Services extends Component
         $this->resetInput();
     }
 
-    public function serviceActivities(){
-
-        $current_date =  Carbon::now();
-
-        $this->updateMode = false;
-        $this->activityMode = true;
-
-        $one_weak =  Carbon::now()->subDays(7);
-
-        $this->activities = VoterService::whereDate('created_at','<=', $current_date)
-            ->whereDate('created_at','>=', $one_weak)->get();
-        return view('livewire.services.list');
-    }
+   
 
     public function confirmItemDeletion( $id) 
     {

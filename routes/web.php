@@ -16,6 +16,8 @@ use App\Http\Livewire\Reports;
 use App\Http\Livewire\Holidays;
 use App\Http\Livewire\Services;
 use App\Http\Livewire\Voters;
+use App\Http\Livewire\Activities;
+
 
 
 /*
@@ -47,7 +49,7 @@ Route::get('users', Users::class)->name('users');
 
 Route::get('services', Services::class)->name('services');
 
-// Route::get('/activities', [Services::class, 'serviceActivities'])->name('activities');
+Route::get('activities', Activities::class)->name('activities');
 
 Route::get('voters', Voters::class)->name('voters');
 

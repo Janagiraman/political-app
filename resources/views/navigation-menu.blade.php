@@ -45,6 +45,12 @@
                        <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Voters</span>
                     </x-jet-nav-link>
                 </li>
+                <li class="mr-3 mt-2 flex-1">
+                    <x-jet-nav-link href="{{ route('activities') }}" :active="request()->routeIs('activities')">
+                       <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Activities</span>
+                    </x-jet-nav-link>
+                </li>
+              
               
 
             </ul>

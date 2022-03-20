@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\VoterInfo;
+use App\Models\VoterService;
 
 class Voter extends Model
 {
@@ -28,5 +29,11 @@ class Voter extends Model
     {
         return $this->belongsTo(VoterInfo::class);
     }
+
+    public function voterService()
+    {
+        return $this->hasOne(VoterService::class);
+    }
+
 
 }
