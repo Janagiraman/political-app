@@ -36,13 +36,12 @@ class Services extends Component
             'name' => 'required',
             
         ]);
-        
-      
-       
+        // print_r($this->is_photo_required);
+        // exit;
         Service::create([
             'name' => $this->name,
             'description' => $this->description,
-            'is_photo_required' => $this->is_photo_required ? 'Y':'N'         
+            'is_photo_required' => (isset($this->is_photo_required) == 1) ? 'Y':'N'         
         ]);
         $this->createMode = false;
         $this->resetInput();
@@ -71,6 +70,7 @@ class Services extends Component
             $role->update([
                 'name' => $this->name,
                 'description' => $this->description,
+                'is_photo_required' => ($this->is_photo_required == 1) ? 'Y':'N'  
                 
             ]);
 

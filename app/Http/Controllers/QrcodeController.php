@@ -16,12 +16,13 @@ class QrcodeController extends Controller
         $voter = Voter::find($id);
         $qr_code = QrCode::size(300)->generate($voter->epic_no);
         $data = [
+            'image' => $voter->voterService->image,
             'name' => $voter->voter_name,
             'epic_no' => $voter->epic_no,
             'age' => $voter->age            
         ];
-        $pdf = PDF::loadView('qrPdf',['data'=>$data, 'qr_code' => $qr_code]);
-        return $pdf->download($voter->voter_name.'.pdf');
+        // $pdf = PDF::loadView('qrPdf',['data'=>$data, 'qr_code' => $qr_code]);
+        // return $pdf->download($voter->voter_name.'.pdf');
         // exit;
         // exit;
         // $data = [
