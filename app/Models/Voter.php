@@ -32,7 +32,7 @@ class Voter extends Model
 
     public function voterService()
     {
-        return $this->hasOne(VoterService::class);
+        return $this->hasOne(VoterService::class)->where('service_type','=',3);
     }
 
 

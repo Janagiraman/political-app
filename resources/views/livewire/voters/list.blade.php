@@ -57,6 +57,8 @@
                                     <td class="border px-4 py-2">{{ $voter->age }}</td>
                                     <td class="border px-4 py-2">{{ $voter->gender }}</td>
                                     <td class="border px-4 py-2">{{ $voter->relation_name }}</td>
+                                    
+
                                     <td class="border px-4 py-2">
                                             <x-jet-secondary-button wire:click="voterDetails({{$voter->id}})" class=" float-right bg-orange-500 hover:bg-gray-300 hover:text-white-100 px-4 py-2 my-6">
                                                 View

@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class Services extends Component
 {
     public $updateMode,$createMode, $activityMode = false;
-    public $roles, $name, $description, $confirmingItemDeletion, $activities;
+    public $roles, $name, $description, $confirmingItemDeletion, $activities, $is_photo_required;
     public $show = true;
 
     public function render()
@@ -36,9 +36,13 @@ class Services extends Component
             'name' => 'required',
             
         ]);
+        
+      
+       
         Service::create([
             'name' => $this->name,
-            'description' => $this->description          
+            'description' => $this->description,
+            'is_photo_required' => $this->is_photo_required ? 'Y':'N'         
         ]);
         $this->createMode = false;
         $this->resetInput();

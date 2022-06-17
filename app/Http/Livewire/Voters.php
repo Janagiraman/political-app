@@ -170,4 +170,12 @@ class Voters extends Component
         
         $this->locationView = true;
     }
+
+    public function qrCodeGenerate($id){
+            \QrCode::size(500)
+                ->format('png')
+                ->generate('ItSolutionStuff.com', public_path('images/qrcode.png'));
+        
+            return view('qrCode');
+    }
 }

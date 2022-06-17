@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TaskController;
+use App\Http\Controllers\QrcodeController;
 
 
 use App\Http\Livewire\Customers;
@@ -17,6 +17,7 @@ use App\Http\Livewire\Holidays;
 use App\Http\Livewire\Services;
 use App\Http\Livewire\Voters;
 use App\Http\Livewire\Activities;
+use App\Http\Livewire\QrCode;
 
 
 
@@ -38,6 +39,7 @@ Route::get('/', function () {
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+// Route::get('qr-code',  'HomeController@qrCode')->name('qrCode');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', Dashboard::class)->name('dashboard');
 
@@ -57,7 +59,12 @@ Route::get('cities', Cities::class)->name('cities');
 
 Route::get('reports', Reports::class)->name('reports');
 
+Route::get('qr-code', QrCode::class)->name('qr-code');
+
+
 Route::get('import-voters', [HomeController::class, 'index'])->name('import-voters');
+
+Route::get('qr-code-generate/{id}', [QrcodeController::class, 'index'])->name('qr-code-generate');
 
 
 

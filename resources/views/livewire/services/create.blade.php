@@ -25,6 +25,14 @@
                              @error('email') <span class="font-mono text-xs text-red-700">{{ $message }}</span> @enderror
                  </div> 
             </div>
+            <div class="flex">
+               
+               <div class="md:w-1/2 m-2"> 
+                          <x-jet-label for="is_photo_required" value="{{ __('Is Photo Required') }}" />
+                          <input type="checkbox" name="is_photo_required" wire:model="is_photo_required"/>
+                          @error('email') <span class="font-mono text-xs text-red-700">{{ $message }}</span> @enderror
+               </div> 
+          </div>
             @if($createMode)
                   <x-jet-button wire:click.prevent="store()" class="bg-orange-500 hover:bg-orange-700 ml-2">
                         Save

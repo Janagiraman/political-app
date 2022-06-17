@@ -15,7 +15,7 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
 <div class="flex">
         <div   class="w-full mt-2 mr-1 ml-1 "> 
-        <form  class="w-full max-w-6xl ml-10">
+                <form  class="w-full max-w-6xl ml-10">
                
                     <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
