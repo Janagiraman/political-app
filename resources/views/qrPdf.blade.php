@@ -1,6 +1,8 @@
 <div>
     <div>
         PHoto : {{ asset('service_images/'.$data['image']) }}
+       
+        <!-- <img src="{{ asset('service_images/'.$data['image']) }}" alt="">   -->
     </div>
     <div>
         Name : {{ $data['name'] }}

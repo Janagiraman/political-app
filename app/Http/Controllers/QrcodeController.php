@@ -15,14 +15,21 @@ class QrcodeController extends Controller
         $id = $request->id;
         $voter = Voter::find($id);
         $qr_code = QrCode::size(300)->generate($voter->epic_no);
+
+        // $photo = isset($voter->voterService->image) ? $voter->voterService->image : 'no_photo.jpg';
+        // $path = asset('service_images/'.$photo);
+        // $type = pathinfo($path, PATHINFO_EXTENSION);
+        // $data = file_get_contents($path);
+        // $logo = 'data:image/' . $type . ';base64,' . base64_encode($data);
+       
         $data = [
-            'image' => $voter->voterService->image,
+            'image' => isset($voter->voterService->image) ? $voter->voterService->image : 'no_photo.jpg',
             'name' => $voter->voter_name,
             'epic_no' => $voter->epic_no,
             'age' => $voter->age            
         ];
-        // $pdf = PDF::loadView('qrPdf',['data'=>$data, 'qr_code' => $qr_code]);
-        // return $pdf->download($voter->voter_name.'.pdf');
+        $pdf = PDF::loadView('qrPdf',['data'=>$data, 'qr_code' => $qr_code]);
+        return $pdf->download($voter->voter_name.'.pdf');
         // exit;
         // exit;
         // $data = [

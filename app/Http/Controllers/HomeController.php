@@ -32,4 +32,8 @@ class HomeController extends Controller
 
         return back()->withStatus('Import done!');
     }
+
+    public function qrCode(Request $request){
+
+    }
 }

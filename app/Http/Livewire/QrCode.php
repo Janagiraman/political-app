@@ -32,10 +32,10 @@ class QrCode extends Component
         $this->voterDetails = Voter::where('id', $id)->first();
         $this->voterProfile = VoterInfos::where('voter_id', $id)->get();
         $this->voterServices = VoterService::with('user:id,name','service:id,name')->where('voter_id', $id)->get(); 
-        // QrCode::format('png')
-        //     ->generate($id, public_path('images/qr-code.png'));
+        QrCode::format('png')
+            ->generate($id, public_path('images/qr-code.png'));
     
-                 QrCode::size(300)->backgroundColor(255,90,0)->generate('RemoteStack');
+                //  QrCode::size(300)->backgroundColor(255,90,0)->generate('RemoteStack');
          
         
         
